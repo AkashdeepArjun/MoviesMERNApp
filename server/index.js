@@ -1,0 +1,24 @@
+import express from "express"
+import bodyParser from "body-parser"
+import cors from "cors"
+import dbSetUp from "./database/index.js"
+import router from "./routes/Routings.js"
+const app =express()
+const config_port=3000
+
+
+
+app.use(bodyParser.urlencoded({extended:true}))
+
+app.use(cors())
+
+
+app.use(bodyParser.json())
+
+// app.get('/',(req,res)=>res.send("Welcome to Web MERN development"))
+
+
+app.use('/',router)
+
+dbSetUp()
+app.listen(config_port,()=>console.log("yay! server started"))

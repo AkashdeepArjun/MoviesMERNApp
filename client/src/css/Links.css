@@ -1,0 +1,31 @@
+
+html{
+
+font-size: 8px;
+
+}
+
+.navbar-nav{
+
+     display:flex;
+    flex-direction: row;
+     padding: 1rem;
+     align-items: baseline;
+    font-family: fantasy;
+    
+}
+
+.nav-link{
+
+    margin-right: 1rem;
+    color: white;
+    font-size: 3rem;
+    text-decoration: none;
+
+}
+
+.palm:hover{
+
+    color: green;
+
+}
