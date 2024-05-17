@@ -9,6 +9,8 @@ html{
     padding: 0.35rem;
     background-color: #f6e49a;
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    overflow: scroll;
     
 }
 
@@ -16,6 +18,8 @@ li{
 background-color: #2d4b4d;
 padding: 5rem;
 color: white;
+width: 10rem;
+flex:1
 
 }
 

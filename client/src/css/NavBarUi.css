@@ -10,9 +10,11 @@ html{
 
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     padding: 2rem;
     justify-content: center;
     align-items: baseline;
+    overflow:scroll;
     background-color: rgb(39, 39, 67);
 
 }
