@@ -11,9 +11,9 @@ import { RiDeleteBin5Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
 let delete_button_style ={
-    color:"Yellow",
-    width:50,
-    height:50
+    backgroundColor:"Yellow",
+    color:"Red",
+   
 }
 
 
@@ -70,21 +70,35 @@ const MoviesList =()=>{
                     {movies.map((element) => (
                               <ul key={Math.random()*10}>
                             <li >
-                            <Link to={`/update/${element.name}`}>
+                                <div className="manage_movie">
 
-                                    <MdEdit/>
 
-                            </Link>
-                                <p>{element.name}</p>
-                                <RiDeleteBin5Fill style={delete_button_style} className="potato edit_icon" onClick={(e)=>{
-                                handleDelete(e,element.name)
-                            
-                                }}/>
+                                             <RiDeleteBin5Fill style={delete_button_style} className="potato delete" onClick={(e)=>{
+                                                 handleDelete(e,element.name)
+
+                                              }}/>
+
+
+
+
+                                                <Link to={`/update/${element.name}`}>
+
+                                                    <MdEdit className='edit_icon'/>
+
+                                                </Link>
+
+                                       
+
+
+                                </div>
+                           
+                                <p className='movie_name'>{element.name} </p>
                                 
-                                
+                                <p className='movie_rating'>{element.rating}👑</p>
+                                              
 
                             </li>
-                            <li>Movie rating:{element.rating}</li>
+                           
                            </ul>
 
                     ))
