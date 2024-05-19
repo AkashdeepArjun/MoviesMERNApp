@@ -63,7 +63,7 @@ const MoviesList =()=>{
                 <>
                 
                 
-                    <p>you will see list of movies </p>
+                    {/* <p>you will see list of movies </p> */}
 
                     <div  className="movies_container">
                   

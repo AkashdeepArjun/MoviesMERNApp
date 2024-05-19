@@ -1,9 +1,13 @@
-import React,{Component} from "react";
+import React,{Component, useRef} from "react";
 import styled from 'styled-components'
 
 import logo from '../LOGO.svg'
 
-import '../css/LogoPart.css'
+let logo_dimensions={
+width:"10rem",
+height:"10rem"
+
+}
 
 const Container =styled.a.attrs({
 
@@ -14,11 +18,14 @@ const Container =styled.a.attrs({
 
 const LogoUI =()=>{
 
+   
+
+
 return(<>
 
-        <div className="navbar-brand logo_design">
+        <div >
 
-        <img src={logo} width={50} height={50}/>
+        <img src={logo}style={logo_dimensions} />
 
         </div>
        
