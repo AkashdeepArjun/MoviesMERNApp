@@ -5,33 +5,17 @@ html{
 
 .movies_container{
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.5fr 0.5fr;
-    /* grid-auto-rows: 1fr; */
-   
+    grid-template-columns:repeat(3,1fr);
+    padding: 0.35rem;
     background-color: #f6e49a;
-    /* justify-content: space-evenly; */
-    justify-content: center;
-  
+    justify-content: space-evenly;
     
 }
 
 li{
-display: flex;
-flex-direction: column;
 background-color: #2d4b4d;
-padding: 0.5rem;
+padding: 5rem;
 color: white;
-justify-content: center;
-
-}
-
-.manage_movie{
-    display: flex;
-    flex-direction: row;
-    padding: 0.5rem;
-    justify-content: space-between;
-
 
 }
 
@@ -59,32 +43,6 @@ p{
     width: 5rem;
     height: 5rem;
     color: #f7f705;
-    justify-self: end;
-    margin-left: 1rem;
 
-}
-
-.delete{
-    justify-self: start;
-    padding: 0.75rem;
-    border-radius: 2rem;
-    width: 5rem;
-    height: 5rem;
-}
-
-.movie_name{
-
-    font-size: 4rem;
-    justify-self: center;
-    font-family: cursive;
-    text-align: center;
-
-}
-
-.movie_rating{
-
-    font-size:2rem;
-    font-family: cursive;
-    text-align: center;
 
 }
