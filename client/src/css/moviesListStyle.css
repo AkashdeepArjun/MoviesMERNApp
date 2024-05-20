@@ -4,8 +4,8 @@ html{
 }
 
 .movies_container{
-    display:flex;
-    flex-direction: row;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
     padding: 0.35rem;
     background-color: #f6e49a;
     justify-content: space-evenly;
