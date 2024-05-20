@@ -40,6 +40,7 @@ const UpdateMovieUI =()=>{
                         
                         console.log("OH yeah success",res.data)
                         window.alert("updation of movie success")
+                
                 }).catch((e)=>{console.log("AT UPDATE MOVIE DETAILS ERROR ",e)})
 
         }

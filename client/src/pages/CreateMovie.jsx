@@ -25,7 +25,7 @@ const CreateMovie =()=>{
 
             <>
             
-                    <div> you will see form here to make new movie </div>
+                    {/* <div> you will see form here to make new movie </div> */}
 
                     <div className="container">
 

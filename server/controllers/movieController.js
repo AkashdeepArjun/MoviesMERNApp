@@ -127,7 +127,7 @@ const getAllMovies =async(req,res)=>{
     try {
         
     
-        const enteries = await movieModel.find({},{_id:0,time:0});
+        const enteries = await movieModel.find({},{_id:0,time:0}).sort({rating:-1});
         // const p= req.params.rid      //PARAMETERS  ARE VALUES THAT PASSED DIRECTLY
 
         if(enteries!=null){
