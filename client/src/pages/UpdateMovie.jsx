@@ -27,12 +27,12 @@ const UpdateMovieUI =()=>{
         const [editedMovie,setMovieDetail]=useState(defaultDetail)
 
         const editName =(e)=>{
-                setMovieDetail({...editedMovie,name:e.target.value})
+                setMovieDetail({...editedMovie,name:e.target.value.trim()})
         }
 
         const editRating =(e)=>{
 
-                setMovieDetail({...editedMovie,rating:e.target.value})
+                setMovieDetail({...editedMovie,rating:e.target.value.trim()})
         } 
 
         const updateDetails = ()=>{

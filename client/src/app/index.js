@@ -5,31 +5,42 @@ import CreateMovie from "../pages/CreateMovie";
 import MoviesList from "../pages/MoviesList";
 import UpdateMovieUI from "../pages/UpdateMovie";
 
+import {useNavigation} from 'react-router-dom'
 
 function App() {
+
+ //let nav = useNavigation()		
   return (
     <>
+	
 
-      <Router>
+
+
+		      <Router>
       
-        <NavBarUi/>
-        
+		
+
+			<NavBarUi/>
+
+				<Routes>
+				  <Route path="/" element={<MoviesList/>}/>
+				  <Route path="/create_movie" element={<CreateMovie/>}/>
+				  <Route path="/update/:movie_ka_naam" element={<UpdateMovieUI />}/>
+				  </Routes>
 
 
-        <Routes>
-          <Route path="/" element={<MoviesList/>}/>
-          <Route path="/create_movie" element={<CreateMovie/>}/>
-          <Route path="/update/:movie_ka_naam" element={<UpdateMovieUI />}/>
-          </Routes>
+		
+
+	      
+		      </Router>
 
 
-
-
-
+		  {console.log("hi")}
       
-      </Router>
-      
-    </>
+  		
+
+  </>
+
   );
 }
 

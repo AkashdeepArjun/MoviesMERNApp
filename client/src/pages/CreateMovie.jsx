@@ -1,21 +1,28 @@
 import { useState } from 'react'
 import '../css/CreateMovie.css'
 import { addMovie } from '../api'
-
+import {useNavigate} from 'react-router-dom'
 const CreateMovie =()=>{
 
         let movie={name:"",time:[],rating:-1}
 
+	let navigate=useNavigate()
+
         const [newMovie,updateMovieDetails]=useState(movie)
 
-        const updateName =async (e)=>updateMovieDetails({...newMovie,name:e.target.value})
+        const updateName =async (e)=>updateMovieDetails({...newMovie,name:e.target.value.trim()})
 
-        const updateRating = async (e)=>updateMovieDetails({...newMovie,rating:e.target.value})
+        const updateRating = async (e)=>updateMovieDetails({...newMovie,rating:e.target.value.trim()})
 
 
         const addNewMovie =async ()=>{
 
-                await addMovie(newMovie).then((res)=>{window.alert(`movie was added with ${res.data.status_code}`)})
+                await addMovie(newMovie).then((res)=>{
+
+			navigate(-1)	
+		}
+
+		)
                 .catch((e)=>{console.log(`buahaha movie was not added error is ${e}`)})
                 
 
