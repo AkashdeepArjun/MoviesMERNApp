@@ -5,6 +5,7 @@ import '../css/CreateMovie.css'
 import { addMovie, fetchMovieById ,updateMovie} from '../api'
 import { useParams } from 'react-router-dom'
 
+import { useNavigate} from 'react-router-dom'
 
 let buttonStyle={
 
@@ -17,8 +18,8 @@ let buttonStyle={
 }
 const UpdateMovieUI =()=>{
 
-       
-       
+      	const navigate =useNavigate();
+
         const {movie_ka_naam}=useParams();
         
         let defaultDetail ={name:movie_ka_naam,time:[],rating:0}
@@ -39,8 +40,9 @@ const UpdateMovieUI =()=>{
                 updateMovie(movie_ka_naam,editedMovie).then((res)=>{
                         
                         console.log("OH yeah success",res.data)
-                        window.alert("updation of movie success")
-                
+                        //window.alert("updation of movie success")
+			navigate(-1)
+
                 }).catch((e)=>{console.log("AT UPDATE MOVIE DETAILS ERROR ",e)})
 
         }
