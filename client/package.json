@@ -20,11 +20,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-<<<<<<< HEAD
     "start": "PORT=4000 react-scripts start",
-=======
     "start": " PORT=4000 react-scripts start",
->>>>>>> popat/FixedAnimations
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
