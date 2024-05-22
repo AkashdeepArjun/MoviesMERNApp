@@ -81,6 +81,8 @@ const deleteMovie=async(req,res)=>{
 
     console.log(`dekho parameter aaya hai ${req.params.title}`)
 
+	const movie_name=req.params.title.trim();
+
     const body =req.body
     try{
 
@@ -89,7 +91,7 @@ const deleteMovie=async(req,res)=>{
             res.send("<p>you must provide movie object </p>")
     
         }else{
-            const movie_exist= await movieModel.find({"name":req.params.title})
+            const movie_exist= await movieModel.findOne({"name":`${movie_name}`})
             console.log("MOVIE EXIST OR NOT ?:",movie_exist)
             if(isEmpty(movie_exist)){
 
