@@ -16,4 +16,9 @@ const myapi =axios.create({
 const updateMovie =(naam,payload)=>myapi.put(`/update/${naam}`,payload)
 
 const fetchMovieById = (movie_ka_naam)=>myapi.get(`/movie/${movie_ka_naam}`)             
-export {addMovie,allMovies,deleteMovie,updateMovie,fetchMovieById}
+
+const getAllMoviesTiny =(p=1,l=10)=>myapi.get('/special',{params:{page:p,limit:l}})
+
+export {addMovie,allMovies,deleteMovie,updateMovie,fetchMovieById,getAllMoviesTiny}
+
+

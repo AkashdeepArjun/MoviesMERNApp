@@ -122,6 +122,41 @@ const deleteMovie=async(req,res)=>{
 }
 
 
+const getAllMoviesTinyEdition = async(req,res)=>{
+
+
+	
+	const {page,limit} =req.query
+
+	const c= await req.query
+	console.log(`AT CONTROLLERS QUERIES ARE ${page} and ${limit}`)
+
+	console.log("AT CONTROLLERS BODY IS ",c)
+
+	console.log("PARAMS ARE ",req.params)
+
+	if(!isEmpty(req.query))
+
+	{
+
+	return res.status(202).json({reply:`query succes with params ${page} and ${limit}`})
+
+	}else{
+
+	console.log(" CONTROLLERS :QUERIES ARE EMPTY ")	
+	return res.status(402).json({reply:`error fetching queries`,status_code:402})
+
+	}
+
+
+
+
+
+
+
+}
+
+
 
 const getAllMovies =async(req,res)=>{
     // console.log("queries are ",req.query);
@@ -179,7 +214,7 @@ const randomMovie = async(req,res)=>{
 
 const checkQueries =async (req,res,next)=>{
 
-
+	console.log("..........CHECK STARTS.....")
     console.log('URL',getFullUrl(req))
     
     console.log('BODY',req.body);
@@ -189,6 +224,8 @@ const checkQueries =async (req,res,next)=>{
     if(!isEmpty(req.params)){
         console.log('parameter is :',req.params.hot)
     }
+
+	console.log(".........CHECK ENDS....")
     // res.send(`<h1>a is ${req.query.a} b is ${req.query.b}</h1>`)
     
    next()
@@ -220,4 +257,4 @@ const getMovieById = async(req,res)=>{
 
 
 
-export {createMovie,getAllMovies,updateMovie,deleteMovie,randomMovie,checkQueries,getMovieById}
+export {createMovie,getAllMovies,updateMovie,deleteMovie,randomMovie,checkQueries,getMovieById,getAllMoviesTinyEdition}

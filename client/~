@@ -1,7 +1,5 @@
 import react from 'react'
 
-import {createSearchParams} from 'react-router-dom'
-
 import {Link} from 'react-router-dom'
 
 import '../css/Links.css'
@@ -48,13 +46,13 @@ return(<>
 			
                   <div className='collapse navbar-collapse palm'>
 
-                    <Link to={{
+                    <Link to={
 
 			pathname:"/special",
-			search:`?${createSearchParams({page:1,limit:10})
+			search:createSearchParams({page:1,limit:10})
 
 
-		    }`}} className='nav-link'>PAGINATED MOVIES</Link>
+		    } className='nav-link'>PAGINATED MOVIES</Link>
 
                 </div>
 
