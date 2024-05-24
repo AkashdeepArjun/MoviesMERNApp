@@ -6,6 +6,9 @@ import {useEffect,useState} from "react"
 import {useSearchParams} from "react-router-dom"
 
 
+import "../css/moviesListStyle.css"
+
+
 
 const PaginatedMovies =()=>{
 
@@ -16,7 +19,21 @@ const PaginatedMovies =()=>{
 
 	const [limit,setLimit] =useState(queries.get("limit"))
 
+	const [movies,setMovies] =useState([])
 
+
+	const loadUpMovies =()=>{
+
+
+		getAllMoviesTiny(page,limit).then((res)=>{
+
+
+		console.log("RETRIEVE SUCCESS",res)
+
+		setMovies(res.data.list)
+
+		}).catch((e)=>console.log("Eror buahahahaaa at getting list of movies :0")) 
+	}
 
 	const updateUrl=()=>{
 
@@ -25,14 +42,16 @@ const PaginatedMovies =()=>{
 			
 	setQueries({page:page,limit:limit})
 
+	loadUpMovies()
+
 
 	}
 
 	useEffect(()=>{
 
+
+	loadUpMovies()
 	
-	
-	getAllMoviesTiny(page,limit)
 
 
 	},[])
@@ -53,13 +72,45 @@ const PaginatedMovies =()=>{
 
 
 	<button onClick={()=>updateUrl()}>submit</button>
+
+
+	<div className="movies_container">
+
 	
+
+	{movies.map((movie)=>(
+
+		<ul key={Math.random()*10}>
+
+		<li>
+
+		<p>{movie.name}</p>
+
+
+
+		</li>
+
+
+
+	</ul>
+
+	))}
+	
+
+	
+
+	
+	
+
+
+	
+	</div>	
 
 	</>
 	
 
 
-
+	
 
 
 
