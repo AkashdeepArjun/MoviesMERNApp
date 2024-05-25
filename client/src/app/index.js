@@ -14,8 +14,6 @@ function App() {
  //let nav = useNavigation()
 	//
 
-	let a=8
-	let b=9
   return (
     <>
 	

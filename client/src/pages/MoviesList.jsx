@@ -28,6 +28,10 @@ const MoviesList =()=>{
 
 
     const [movies,updateMovies]=useState([])
+
+
+	
+   const [filtered,setFiltered] =useState([])
 	
 const [isMovieDeleted,setMovieDeleted]=useState(false)
 
@@ -47,6 +51,44 @@ const [isMovieDeleted,setMovieDeleted]=useState(false)
             .catch((e)=>console.log("STUPID FETCHING ERROR  HAPPENED DURING FETCH PHASE"))
 
 	}
+
+
+	const filterData=(e)=>{
+
+	console.log( "MOVIES AT BEGINING OF FILTER METHOD",movies)
+
+
+	if(e.target.value.trim()==""){
+
+		loadData()
+
+		console.log("data is filtered")
+
+		setFiltered([])
+		
+
+	}else {
+
+
+
+		console.log("ORIGNAL MOVIE IS ",movies)	
+
+		setFiltered(movies.filter(movie=>
+
+		   movie.name.toLowerCase().includes(e.target.value.trim().toLowerCase())
+
+
+	))
+		console.log("JUST AFTER APPLYING FILTER",movies)	
+		console.log("FILTERED ",filtered)
+
+		updateMovies(filtered)	
+
+}
+
+		console.log("AFTER FILER METHOD MOVIES ARE ",movies)
+		
+}
 
         const handleDelete =(event,title)=>{
 
@@ -79,6 +121,13 @@ const [isMovieDeleted,setMovieDeleted]=useState(false)
                 
                 
                     {/* <p>you will see list of movies </p> */}
+				
+			<div className="container_search_bar">
+
+			<input type="text" className="input_search_bar" placeholder="SEARCH MOVIES" onChange={(e)=>filterData(e)}/>
+
+			</div>
+
 
                     <div  className="movies_container">
                   
