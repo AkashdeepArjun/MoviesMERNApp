@@ -128,18 +128,24 @@ const getAllMoviesTinyEdition = async(req,res)=>{
 	
 	const {page,limit} =req.query
 
-	const c= await req.query
 	console.log(`AT CONTROLLERS QUERIES ARE ${page} and ${limit}`)
 
-	console.log("AT CONTROLLERS BODY IS ",c)
 
-	console.log("PARAMS ARE ",req.params)
 
 	if(!isEmpty(req.query))
 
 	{
 
-	return res.status(202).json({reply:`query succes with params ${page} and ${limit}`})
+	console.log("ohn yeaaddddd")	
+	const start_index=(page-1)*limit
+
+	const total_movies=await movieModel.countDocuments()
+
+	const movies_list=await movieModel.find().skip(start_index).limit(limit)
+
+	//console.log("DEKHO Movies",movies_list)
+
+	return res.status(202).json({list:movies_list,status_code:202})
 
 	}else{
 
