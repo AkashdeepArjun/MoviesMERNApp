@@ -1,0 +1,100 @@
+html{
+
+    font-size:8px
+}
+
+
+
+.container_search_bar{
+	
+	display:inline-flex;
+	width:100vw;
+	justify-content:center;
+	background-color:green;
+	padding:1rem;
+
+
+
+}
+
+div.container_pagination{
+
+display:flex;
+
+justify-content:center;
+
+
+
+
+
+
+}
+
+.input_search_bar{
+
+border-radius:1rem;
+padding:1rem;
+align-self:flex-end;
+}
+
+.movies_container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    padding: 0.35rem;
+    background-color: #f6e49a;
+    justify-content: space-evenly;
+    
+    
+}
+
+li{
+background-color: #2d4b4d;
+padding: 5rem;
+color: white;
+
+}
+
+.edit{
+
+	display:grid;
+	grid-template-columns:repeat(2,1fr);	
+
+
+}
+
+p{
+    font-family: cursive;
+    font-size:1.5rem;
+}
+
+.potato{
+
+
+    transition-property: transform;
+    transition-duration: 2s;
+    transition-delay: 1s;
+    transition-timing-function: linear;
+}
+
+.potato:hover{
+    background-color: gray;
+    transform: scale(3rem);
+}
+
+.edit_icon{
+
+    width: 5rem;
+    height: 5rem;
+    color: #f7f705;
+
+
+}
+
+.del_icon{
+
+width:5rem;
+height:5rem;
+color:"red";
+
+
+}
